@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="car-list"></ul> 
+
+<script>
+const cars = ["Audi", "BMW", "Chevrolet", "Ford", "Honda", "Hyundai", "Jeep", "Kia", "Lexus", "Mercedes-Benz", "Nissan", "Porsche", "Toyota", "Volkswagen", "Volvo"];
+cars.push("Bugatti");
+const list = document.getElementById("car-list");
+
+cars.forEach(car => {
+  const li = document.createElement("li"); 
+  li.textContent = car;                    
+  list.appendChild(li);                  
+});
+</script>
+
+</body>
+</html>

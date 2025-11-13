@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Web Technology</title>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #007acc;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        <!-- table, th, td {
+            border: 1px solid #ccc;
+        } -->
+
+        td {
+            padding: 12px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            color: #005fa3;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        a[href="#top"] {
+            display: block;
+            text-align: right;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+        }
+
+        a[href="#top"]:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #007acc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="color: white;">Web Technology</h1>
+        <img src="./Assests/Web Technology.png.jpg" alt="Web Technology Banner">
+    </header>
+
+    <div class="container">
+        <h2 id="top">Table of Contents</h2>
+        <table>
+            <tr>
+                <td><a href="#client-server">Client-Server</a></td>
+                <td><a href="#components">Components of Web Applications</a></td>
+                <td><a href="#types-content">Types of Web Content</a></td>
+            </tr>
+            <tr>
+                <td><a href="#http-request">HTTP Request</a></td>
+                <td><a href="#dynamic-pages">Dynamic Web Pages</a></td>
+                <td><a href="#app-servers">Application Servers</a></td>
+            </tr>
+            <tr>
+                <td><a href="#web-security">Web Security</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h2 id="client-server">Client-Server</h2>
+        <img src="./Assests/client-server.png" alt="Client-Server">
+        <p>Client-Server Architecture
+
+Definition:
+Client-server is a network architecture where clients (users or devices) request services or resources, and servers provide those services or resources.
+
+Key Components:
+
+Client:
+
+Requests data or services.
+
+Typically a web browser, mobile app, or software.
+
+Does not share its resources but initiates communication.
+
+Server:
+
+Responds to client requests.
+
+Provides services such as web pages, files, databases, or applications.
+
+Can handle multiple client requests simultaneously.
+
+How It Works:
+
+Client sends a request to the server (e.g., a user opens a website).
+
+Server processes the request.
+
+Server sends back the appropriate response (e.g., HTML page).
+
+Client receives and displays the data.
+
+Examples:
+
+Web: Browser (client) ↔ Web server
+
+Email: Email app (client) ↔ Mail server
+
+Database: Application (client) ↔ Database server
+
+Advantages:
+
+Centralized control and data storage.
+
+Easier maintenance and security.
+
+Scalable with proper configuration.
+
+Disadvantages:
+
+Server downtime can impact all clients.
+
+Can become expensive with high traffic.
+
+Performance depends on server capacity.</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="components">Components of Web Applications</h2>
+        <img src="./Assests/Web App Components.png" alt="Web App Components">
+        <p>🧑‍💻 1. Frontend (Client-Side)
+
+Definition: The part of the application that users interact with directly — runs in the browser.
+
+Key Technologies:
+
+HTML – Structure
+
+CSS – Styling
+
+JavaScript – Interactivity
+
+Frontend frameworks – React, Angular, Vue.js
+
+Responsibilities:
+
+User interface (UI)
+
+Handling user input
+
+Displaying data from the backend
+
+🖥️ 2. Backend (Server-Side)
+
+Definition: Handles business logic, database interactions, and client requests.
+
+Key Technologies:
+
+Languages: Node.js, Python, Java, PHP, Ruby
+
+Frameworks: Express.js, Django, Spring, Laravel
+
+Responsibilities:
+
+Process requests from the frontend
+
+Communicate with the database
+
+Apply business logic
+
+Return responses (usually in JSON format)
+
+🗃️ 3. Database
+
+Definition: Stores and manages data used by the web application.
+
+Types:
+
+Relational Databases (SQL): MySQL, PostgreSQL, Oracle
+
+Non-relational Databases (NoSQL): MongoDB, Firebase
+
+Responsibilities:
+
+Store user data, app data, logs, etc.
+
+Handle queries (read/write/update/delete)
+
+Ensure data consistency and security
+
+☁️ 4. Web Server
+
+Definition: A server that handles HTTP requests and serves the frontend content.
+
+Examples:
+
+Apache
+
+Nginx
+
+Node.js (can act as a web server too)
+
+Responsibilities:
+
+Serve static files (HTML, CSS, JS)
+
+Forward API calls to backend services
+
+Handle security (HTTPS, SSL)
+
+🌐 5. Application Server
+
+Definition: Hosts the backend application logic and communicates with the web server and database.
+
+Responsibilities:
+
+Execute backend code
+
+Handle sessions, authentication, and authorization
+
+Perform complex calculations</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="types-content">Types of Web Content</h2>
+        <img src="./Assests/Types of Web Content.png" alt="Types of Web Content">
+        <p>🌐 Types of Web Content
+1. Text Content
+
+Articles / Blog posts: Informative or opinion-based writings.
+
+News: Up-to-date information and reports.
+
+FAQs: Frequently asked questions to help users.
+
+E-books / Whitepapers: In-depth downloadable content.
+
+Product Descriptions: Details about products or services.
+
+2. Images
+
+Photographs
+
+Illustrations
+
+Infographics
+
+Logos and icons
+
+3. Videos
+
+Tutorials and demonstrations
+
+Promotional videos
+
+Webinars
+
+Live streams
+
+4. Audio
+
+Podcasts
+
+Music
+
+Voice recordings or messages
+
+Sound effects
+
+5. Interactive Content
+
+Quizzes and polls
+
+Forms and surveys
+
+Calculators
+
+Games
+
+Chatbots</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="http-request">HTTP Request</h2>
+        <img src="./Assests/HTTP Request.png" alt="HTTP Request">
+        <p>🔍 HTTP Request
+What is it?
+
+An HTTP Request is a message sent by a client (usually a web browser) to a server to ask for data or perform an action on a web resource.
+
+Key Parts of an HTTP Request:
+
+Request Line
+
+Method (or Verb) — What action the client wants (e.g., GET, POST)
+
+URL (Uniform Resource Locator) — The resource the client wants
+
+HTTP Version — The version of HTTP being used (e.g., HTTP/1.1)
+
+Example:</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="dynamic-pages">Dynamic Web Pages</h2>
+        <img src="./Assests/Dynamic Pages.png" alt="Dynamic Pages">
+        <p>🌐 Dynamic Web Pages
+What Are Dynamic Web Pages?
+
+Dynamic web pages are web pages that change content dynamically, based on user interaction, data, or other real-time factors, rather than showing the same fixed content every time.
+
+Unlike static web pages, which show the same HTML content every time, dynamic pages can display different information for different users or update automatically.
+
+How Dynamic Web Pages Work
+
+Client requests a page
+
+Server processes logic (using programming languages like PHP, Python, Node.js)
+
+Server generates HTML content on the fly based on input, database data, or other factors
+
+Server sends the customized HTML back to the client
+
+Client browser renders the page
+
+Technologies Behind Dynamic Web Pages
+
+Server-side languages: PHP, Python (Django/Flask), Ruby (Rails), Java (Spring), Node.js
+
+Databases: MySQL, PostgreSQL, MongoDB to store and retrieve data
+
+Client-side scripting: JavaScript for interactive changes without page reload (AJAX, React, Vue)
+
+Templating engines: Tools that help generate HTML dynamically (e.g., EJS, Jinja2)</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="app-servers">Application Servers</h2>
+        <img src="./Assests/Application Servers,png.webp" alt="Application Servers">
+        <p>🖥️ Application Servers
+What is an Application Server?
+
+An Application Server is a software framework that provides an environment to run and manage business logic and application services for web applications. It acts as a middle layer between the web server (which handles HTTP requests) and the database.
+
+Key Functions of an Application Server:
+
+Execute business logic: Runs the core code that powers the app’s features (e.g., processing orders, calculations, validations).
+
+Manage application resources: Handles tasks like transaction management, connection pooling, and security.
+
+Handle client requests: Receives requests from web servers or clients, processes them, and returns results.
+
+Middleware services: Supports messaging, authentication, and API integration.
+
+Session management: Tracks user sessions across multiple requests.</p>
+        <a href="#top">Back to Top</a>
+
+        <h2 id="web-security">Web Security</h2>
+        <img src="./Assests/Web Security.png" alt="Web Security">
+        <p>🔒 Web Security
+What is Web Security?
+
+Web Security involves protecting websites, web applications, and online services from cyber threats such as unauthorized access, data breaches, attacks, and other vulnerabilities.
+
+Common Web Security Threats:
+
+Cross-Site Scripting (XSS): Attackers inject malicious scripts into webpages viewed by other users.
+
+SQL Injection: Malicious SQL commands are inserted into input fields to manipulate databases.
+
+Cross-Site Request Forgery (CSRF): Unauthorized commands are transmitted from a user that the website trusts.
+
+Man-in-the-Middle (MITM) Attacks: Intercepting and altering communication between client and server.
+
+Denial of Service (DoS): Overloading a server to make a service unavailable.
+
+Brute Force Attacks: Trying multiple passwords or keys to gain unauthorized access.</p>
+        <a href="#top">Back to Top</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Web Technology</p>
+    </footer>
+</body>
+</html>

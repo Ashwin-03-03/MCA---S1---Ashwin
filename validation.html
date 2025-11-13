@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+  /* ------- Base ------- */
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --accent:#2563eb;
+    --accent-ring:rgba(37,99,235,.25);
+    --border:#e5e7eb;
+    --danger:#e11d48;
+    --success:#16a34a;
+  }
+
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    color:var(--ink);
+    display:grid;
+    place-items:center;
+    padding:24px;
+  }
+
+  /* ------- Table Card ------- */
+  table{
+    width:100%;
+    max-width:640px;
+    border-collapse:separate;
+    border-spacing:0;
+    background:var(--card);
+    border:1px solid var(--border) !important; /* override old border attr */
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    overflow:hidden;
+    font-size:16px;
+  }
+
+  th{
+    text-align:left;
+    padding:16px 20px;
+    font-size:18px;
+    background:linear-gradient(180deg,#f3f4f6 0%,#eef2ff 100%);
+    color:#111827;
+  }
+
+  td{
+    padding:14px 20px;
+    border-top:1px solid var(--border);
+    vertical-align:middle;
+  }
+
+  td:first-child{
+    width:38%;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  /* ------- Inputs ------- */
+  input[type="text"],
+  input[type="number"],
+  input[type="password"]{
+    width:100%;
+    padding:10px 12px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .15s, box-shadow .15s, background .15s;
+  }
+
+  input[type="text"]:hover,
+  input[type="number"]:hover,
+  input[type="password"]:hover{
+    background:#fafafa;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 .25rem var(--accent-ring);
+    background:#fff;
+  }
+
+  /* remove spin buttons in some browsers for a cleaner look */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance: none; margin: 0; }
+  input[type="number"]{ -moz-appearance: textfield; }
+
+  /* ------- Error messages (your existing <span> elements) ------- */
+  span{
+    color:var(--danger);
+    font-size:13px;
+    margin-left:8px;
+    white-space:nowrap;
+  }
+
+  /* ------- Buttons ------- */
+  input[type="reset"],
+  input[type="submit"]{
+    appearance:none;
+    border:0;
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .05s ease, box-shadow .15s ease, background .15s ease;
+  }
+
+  input[type="reset"]{
+    background:#f3f4f6;
+    color:#111827;
+    border:1px solid var(--border);
+  }
+  input[type="reset"]:hover{ background:#e5e7eb; }
+
+  input[type="submit"]{
+    background:linear-gradient(180deg,#3b82f6 0%, #2563eb 95%);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(37,99,235,.25);
+  }
+  input[type="submit"]:hover{ filter:brightness(1.02); }
+  input[type="submit"]:active{ transform:translateY(1px); }
+
+  /* ------- Align the action row ------- */
+  tr:last-child td{
+    border-top:1px solid var(--border);
+  }
+  tr:last-child td:first-child{
+    text-align:left;
+  }
+  tr:last-child td:last-child{
+    text-align:right;
+  }
+
+  /* ------- Responsive ------- */
+  @media (max-width:640px){
+    table{ font-size:15px; }
+    td{ display:block; width:100%; }
+    td:first-child{ padding-bottom:6px; }
+    tr:last-child td{ display:inline-block; width:auto; }
+    tr:last-child td:first-child{ width:45%; }
+    tr:last-child td:last-child{ width:50%; text-align:right; }
+  }
+</style>
+
+<script>
+function onSub(event){
+    let valid = true;
+// name validation
+    let n = document.forms["reg"]["name"].value;
+    if(n.trim() === "" || !isNaN(n)){
+        document.getElementById("sname").innerHTML = "Enter a valid name!";
+        valid = false;
+    }
+// age validation
+    let age = document.forms["reg"]["age"].value;
+    if(age === "" || isNaN(age) || age < 18){
+        document.getElementById("sage").innerHTML = "Age must be 18 or above!";
+        valid = false;
+    }
+// email validation with RegEx
+    let mail = document.forms["reg"]["email"].value;
+    let mailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if(!mail.match(mailFormat)){
+        document.getElementById("smail").innerHTML = "Enter a valid Email!";
+        valid = false;
+    }
+// password validation
+    let pass = document.forms["reg"]["pass"].value;
+    let cpass = document.forms["reg"]["cpass"].value;
+
+    if(pass === "" || cpass === ""){
+        document.getElementById("spass").innerHTML = "Password cannot be empty!";
+        valid = false;
+    }
+    else if(pass !== cpass){
+        document.getElementById("scpass").innerHTML = "Passwords do not match!";
+        valid = false;
+    }
+
+    if(!valid){
+        event.preventDefault(); 
+    }
+}
+</script>
+</head>
+
+<body>
+    <form name="reg" onsubmit="onSub(event)">
+        <table align="center" style="font-size: larger;" border="1px">
+            <tr><th colspan="2">Registration</th></tr>
+            <tr><td>Name:</td><td><input type="text" name="name"><span id="sname"></span></td></tr>
+            <tr><td>Age:</td><td><input type="number" name="age"><span id="sage"></span></td></tr>
+            <tr><td>Email:</td><td><input type="text" name="email"><span id="smail"></span></td></tr>
+            <tr><td>Password:</td><td><input type="password" name="pass"><span id="spass"></span></td></tr>
+            <tr><td>Confirm Password:</td><td><input type="password" name="cpass"><span id="scpass"></span></td></tr>
+            <tr><td><input type="reset" value="Reset"></td><td><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</body>
+</html>

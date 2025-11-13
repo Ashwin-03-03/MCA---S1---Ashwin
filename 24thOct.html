@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form method="POST" name="myForm" onsubmit="val(event)">
+        <input name="txtbox-1" type="text" placeholder="Enter a number">
+        <button type="submit">Click here</button>
+    </form>
+
+    <script>
+        function val(event) {
+            event.preventDefault();
+            
+            let value = document.forms["myForm"]["txtbox-1"].value;
+            if(!isNaN(value)){
+                alert("It's a number")
+            } else {
+                    alert("It's a number")
+            }
+            if (value === "") {
+                alert("Enter a valid value");
+            } else {
+                alert(`You entered: ${value}`);
+            }
+        }
+    </script>
+</body>
+</html>

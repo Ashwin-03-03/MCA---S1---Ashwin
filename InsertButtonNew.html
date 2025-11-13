@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 100px;
+            font-family: Arial, sans-serif;
+            transition: background 0.9s ease;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Button </h1>
+    <button id="btn-1">Change Color</button>
+
+    <script>
+        document.getElementById("btn-1").addEventListener("click", function() {
+            var rcol = "#";
+            for (let i = 0; i < 6; i++) {
+                rcol += Math.floor(Math.random() * 10);
+            }
+            document.body.style.background = rcol;
+        });
+
+        // const cars = ["bmw", "mercedes", "koenigsegg", "audi"];
+        // console.log(cars[0]);
+    </script>
+</body>
+</html>
